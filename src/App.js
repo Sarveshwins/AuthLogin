@@ -9,7 +9,7 @@ const App = () => {
     } else if (result.isCancelled) {
      
     } else {
-      
+      console.log("Result",result)
     }
   }
   return (
