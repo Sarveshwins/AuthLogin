@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-SocialLogin-SocialLoginTests/Pods-SocialLogin-SocialLoginTests-resources.sh
+${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle
