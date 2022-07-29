@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { LoginButton, AccessToken } from 'react-native-fbsdk';
 // import { Settings } from 'react-native-fbsdk';
-const FaceBookLogIn = () => {
+const FaceBookLogIn = ({onResponse,getAccessToken}) => {
   // Settings.setAppID('1545249995894157');
   return (
     <View>
@@ -14,6 +14,7 @@ const FaceBookLogIn = () => {
       <LoginButton
         onLoginFinished={
           (error, result) => {
+            onResponse(error,result)
             if (error) {
               console.log("login has error: " + result.error);
             } else if (result.isCancelled) {
@@ -21,7 +22,7 @@ const FaceBookLogIn = () => {
             } else {
               AccessToken.getCurrentAccessToken().then(
                 (data) => {
-                  console.log(data.accessToken.toString())
+                  getAccessToken&&getAccessToken(data.accessToken.toString())
                 }
               )
             }
