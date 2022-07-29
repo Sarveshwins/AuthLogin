@@ -1,0 +1,6 @@
+module Pods_SocialLogin {
+  umbrella header "Pods-SocialLogin-umbrella.h"
+
+  export *
+  module * { export * }
+}
