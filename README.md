@@ -17,3 +17,15 @@ or npm:
 ```
 npm install --save react-native-social-login
 ```
+### 2. Link
+
+- **React Native 0.60+**
+
+
+[CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
+
+*Note* For `iOS` using `cocoapods`, run:
+
+```bash
+$ cd ios/ && pod install
+```
