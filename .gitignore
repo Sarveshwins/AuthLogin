@@ -101,5 +101,6 @@ ios/ProjectName.xcodeproj/xcuserdata
 
 # Podfile versions
 ios/Podfile.lock
+ios/Pods
 
 # Created by .ignore support plugin (hsz.mobi)

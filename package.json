@@ -2,6 +2,10 @@
   "name": "SocialLogin",
   "version": "0.0.1",
   "private": true,
+
+  "description": "A Social Login Component for Facebook, Google, Firebase and Apple for react native",
+  "main": "index.js",
+
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -9,6 +13,17 @@
     "test": "jest",
     "lint": "eslint ."
   },
+  "keywords": [
+    "react-native-social-login",
+    "social-login-with-react-native",
+    "react-native-facebook-login",
+    "react-native-firebase-login",
+    "react-native-google-login",
+    "react-native-apple-login",
+    "ios",
+    "android"
+  ],
+  "homepage": "https://github.com/Sarveshwins/AuthLogin/blob/main/README.md",
   "dependencies": {
     "react": "18.0.0",
     "react-native": "0.69.3",
@@ -26,5 +41,11 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarveshwins/AuthLogin"
+  },
+  "author": "DITSTEK INNOVATIONS",
+  "license": "MIT"
 }
