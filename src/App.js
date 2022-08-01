@@ -1,22 +1,31 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View} from 'react-native'
 import FaceBookLogIn from './FaceBook/index'
 
-const App = () => {
-  const onResponse=(error,result)=>{
-    if (error) {
-     
-    } else if (result.isCancelled) {
-     
-    } else {
-      console.log("Result",result)
-    }
+const onResponse=(error,result)=>{
+  if (error) {
+     console.log("Error",error)
+  } else if (result.isCancelled) {
+     console.log("Login Cancelled.")
+  } else {
+     console.log("Result",result)
   }
+}
+
+const getAccessToken = (accessToken) => {
+  console.log("Access Token",accessToken)
+}
+
+const App = () => {
+
   return (
-  <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
-  <FaceBookLogIn onResponse={(error,result)=>onResponse(error,result)} getAccessToken={(accessToken)=>console.log("Access Token",accessToken)}/>
-  </View>
-  )
+    <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+    <FaceBookLogIn 
+    onResponse={(error,result)=>onResponse(error,result)} 
+    getAccessToken={(accessToken)=>getAccessToken(accessToken)}
+    />
+    </View>
+    )
 }
 
 export default App

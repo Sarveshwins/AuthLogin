@@ -61,7 +61,6 @@ ii ) Class Name : which will be for my app “com.fbsdksample.MainActivity” . 
 Note : If popup comes for package name verification select “Use this package name”
 
 
-
 ## Installation
 
 ### 1. Install the library
@@ -98,3 +97,41 @@ Before you can run the project, follow the [Getting Started Guide](https://devel
 #### 3.2 iOS
 
 Follow ***steps 2, 3 and 4*** in the [Getting Started Guide](https://developers.facebook.com/docs/ios/use-cocoapods) for Facebook SDK for iOS. 
+
+## Usage
+
+```js
+
+import React from 'react'
+import { View} from 'react-native'
+import FaceBookLogIn from './FaceBook/index'
+
+const onResponse=(error,result)=>{
+    if (error) {
+       console.log("Error",error)
+    } else if (result.isCancelled) {
+       console.log("Login Cancelled.")
+    } else {
+       console.log("Result",result)
+    }
+  }
+
+const getAccessToken = (accessToken) => {
+    console.log("Access Token",accessToken)
+}
+const Demo = () => {
+
+  return (
+  <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+  <FaceBookLogIn 
+  onResponse={(error,result)=>onResponse(error,result)} 
+  getAccessToken={(accessToken)=>getAccessToken(accessToken)}
+  />
+  </View>
+  )
+  
+}
+
+export default Demo
+
+```
