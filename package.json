@@ -1,5 +1,5 @@
 {
-  "name": "react-native-social-login",
+  "name": "react-native-auth-login",
   "version": "0.0.1",
   "description": "A Social Login Component for Facebook, Google, Firebase and Apple for react native",
   "main": "index.js",
@@ -12,8 +12,8 @@
     "lint": "eslint ."
   },
   "keywords": [
-    "react-native-social-login",
-    "social-login-with-react-native",
+    "react-native-auth-login",
+    "auth-login-with-react-native",
     "react-native-facebook-login",
     "react-native-firebase-login",
     "react-native-google-login",
