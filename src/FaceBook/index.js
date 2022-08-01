@@ -34,3 +34,4 @@ const FaceBookLogIn = ({onResponse,getAccessToken}) => {
 }
 
 export default FaceBookLogIn
+FaceBookLogIn
