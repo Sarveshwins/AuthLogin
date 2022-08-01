@@ -1,8 +1,6 @@
 {
-  "name": "SocialLogin",
+  "name": "react-native-social-login",
   "version": "0.0.1",
-  "private": true,
-
   "description": "A Social Login Component for Facebook, Google, Firebase and Apple for react native",
   "main": "index.js",
 
