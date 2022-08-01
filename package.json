@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "A Social Login Component for Facebook, Google, Firebase and Apple for react native",
   "main": "index.js",
-
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -44,6 +43,6 @@
     "type": "git",
     "url": "git+https://github.com/Sarveshwins/AuthLogin"
   },
-  "author": "DITSTEK INNOVATIONS",
-  "license": "MIT"
+  "author": "Sarvesh Awasthi",
+  "license": "ISC"
 }
