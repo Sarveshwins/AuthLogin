@@ -22,6 +22,46 @@ A confirmation code will be sent to the phone number and email address that was 
 Select an occupation that most closely describes what you do for a living.
 
 Now use the app Dashborad to create new app.
+
+
+### Create App
+
+#### Step 1: Start the app creation process
+If you just came from the registration flow, click the Create First App button.
+Otherwise, go to the Apps panel and click Create App.
+
+#### Step 2: Choose an app type
+App type determines which products and APIs are available to your app. If you are more familiar with facebook products and APIs, refer to our [app types](https://developers.facebook.com/micro_site/url/?click_from_context_menu=true&country=IN&destination=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fdevelopment%2Fcreate-an-app%2Fapp-dashboard%2Fapp-types&event_type=click&last_nav_impression_id=0E9etjj7qXy7uDoJp&max_percent_page_viewed=90&max_viewport_height_px=639&max_viewport_width_px=1233&orig_http_referrer=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fdevelopment%2Fcreate-an-app&orig_request_uri=https%3A%2F%2Fdevelopers.facebook.com%2Fajax%2Fdocs%2Fnav%2F%3Fpath1%3Ddevelopment%26path2%3Dcreate-an-app&region=apac&scrolled=true&session_id=116HQtHYwPIwXSjgx&site=developers) document to determine which app type is best suited for your app, then create a new app and choose an appropriate type. Choose ** None ** if just expoloring .
+
+#### Step 3: Set your app name and email
+Enter the name of your app and an email address where you want to recieve important developer notifications. The email address can be different from the email address associated with Facebook account, just make sure it's valid and that you monitor it, since all important developer notifications will be sent there.
+
+Once completed the app creation flow your app will be loaded in the App Dashboard.
+
+On successful creation of app you will have an app id like “964336743958925” . Keep it safe . It will be used in future
+
+### Add Basic Information
+
+Go to your facebook app dashboard settings[https://developers.facebook.com/apps/{app_id}/settings/basic/](https://developers.facebook.com/apps/{app_id}/settings/basic/)
+
+Add “Contact Email, Privacy Policy Url, Category, App Icon, Business use” and then save
+
+#### Add Platform IOS
+
+Go to bottom of Basic Settings and add platform IOS . You have to add Bundle identifier of your app . You can find Bundle identifier in Xcode General Tab  like, “org.reactjs.native.example.FbSdkSample”
+
+#### Add Platform ANDROID
+
+You need to check “applicationId” of your android project which you can find in “android/app/build.gradle”
+
+i ) Add “Google Play Package Name” : which is applicationId of android like my app have “com.fbsdksample”
+
+ii ) Class Name : which will be for my app “com.fbsdksample.MainActivity” . Please Change according to your app id
+
+Note : If popup comes for package name verification select “Use this package name”
+
+
+
 ## Installation
 
 ### 1. Install the library

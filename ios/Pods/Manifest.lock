@@ -312,6 +312,8 @@ PODS:
   - react-native-fbsdk/Share (3.0.0):
     - FBSDKShareKit (~> 8.1)
     - React
+  - react-native-social-login (1.0.0):
+    - React
   - React-perflogger (0.69.3)
   - React-RCTActionSheet (0.69.3):
     - React-Core/RCTActionSheetHeaders (= 0.69.3)
@@ -428,6 +430,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
+  - react-native-social-login (from `../node_modules/react-native-social-login`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -504,6 +507,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-fbsdk:
     :path: "../node_modules/react-native-fbsdk"
+  react-native-social-login:
+    :path: "../node_modules/react-native-social-login"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -559,7 +564,7 @@ SPEC CHECKSUMS:
   React: a779632422a918b26db4f1b57225a41c14d20525
   React-bridging: 96055aa45f0417898d7833e251f4ae79d28acef7
   React-callinvoker: 02df4d620df286381ff3f99180fb24feceaf01cc
-  React-Codegen: 06613a5e753c3af2dca0d6e7dd02944a3d77c3f6
+  React-Codegen: 275a27ce6b276e85b5e9371b7d94c497df95d074
   React-Core: 638d54d64048aa635e7c583fb0d8425206f446b4
   React-CoreModules: f706ec2a1939387517cadc6ce0d2ef0f20fccb53
   React-cxxreact: ec183b7f6fec01e7167f38c1c64a03f68dca7fb2
@@ -568,6 +573,7 @@ SPEC CHECKSUMS:
   React-jsinspector: bb2605f98aada5d81f3494690da3ef3b4ff3b716
   React-logger: 23a50ef4c18bf9adbb51e2c979318e6b3a2e44a1
   react-native-fbsdk: 8e92c7a334fd8d9c2b5d8b8fcd7ae2c314161099
+  react-native-social-login: 1f5396a1e886a8c8b55d1f1d5edc6bcbe3af2c89
   React-perflogger: 39d2ba8cbcac54d1bb1d9a980dab348e96aef467
   React-RCTActionSheet: b1ad907a2c8f8e4d037148ca507b7f2d6ab1c66d
   React-RCTAnimation: 914a9ba46fb6e7376f7709c7ce825d53b47ca2ee

@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import FaceBookLogIn from './FaceBook'
+import FaceBookLogIn from './FaceBook/index'
 
 const App = () => {
   const onResponse=(error,result)=>{
