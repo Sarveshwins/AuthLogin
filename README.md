@@ -94,6 +94,72 @@ $ cd ios/ && pod install
 
 Before you can run the project, follow the [Getting Started Guide](https://developers.facebook.com/docs/android/getting-started/) for Facebook Android SDK to set up a Facebook app. You can skip the build.gradle changes since that's taken care of by the rnpm link step above, but **make sure** you follow the rest of the steps such as updating `strings.xml` and `AndroidManifest.xml`.
 
+Follow following steps to setup android files to use facebook app id
+
+##### Get App id 
+
+Each app that you create has a unique ID. To get the ID for an app, do the following:
+
+1. Sign into your [developer account](https://developers.facebook.com/micro_site/url/?click_from_context_menu=true&country=IN&destination=https%3A%2F%2Fdevelopers.facebook.com%2F&event_type=click&last_nav_impression_id=1ncuveZ8Jff9LpiJt&max_percent_page_viewed=53&max_viewport_height_px=639&max_viewport_width_px=1233&orig_http_referrer=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fandroid%2Fgetting-started%2F&orig_request_uri=https%3A%2F%2Fdevelopers.facebook.com%2Fajax%2Fdocs%2Fnav%2F%3Fpath1%3Dandroid%26path2%3Dgetting-started&region=apac&scrolled=true&session_id=15R4wvgEeeBHpiKu6&site=developers).
+
+2. Open the [Apps page](https://developers.facebook.com/micro_site/url/?click_from_context_menu=true&country=IN&destination=https%3A%2F%2Fdevelopers.facebook.com%2Fapps&event_type=click&last_nav_impression_id=1ncuveZ8Jff9LpiJt&max_percent_page_viewed=53&max_viewport_height_px=639&max_viewport_width_px=1233&orig_http_referrer=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fandroid%2Fgetting-started%2F&orig_request_uri=https%3A%2F%2Fdevelopers.facebook.com%2Fajax%2Fdocs%2Fnav%2F%3Fpath1%3Dandroid%26path2%3Dgetting-started&region=apac&scrolled=true&session_id=15R4wvgEeeBHpiKu6&site=developers).
+
+3. Find your app and click the App ID. The app ID is copied to the clipboard.
+
+##### Get Your Client Token
+
+Each app that you create has a unique client token that you use to access Facebook. To get the Client Token for an app, do the following:
+
+1. Sign into your[developer account](https://developers.facebook.com/micro_site/url/?click_from_context_menu=true&country=IN&destination=https%3A%2F%2Fdevelopers.facebook.com%2F&event_type=click&last_nav_impression_id=1ncuveZ8Jff9LpiJt&max_percent_page_viewed=53&max_viewport_height_px=639&max_viewport_width_px=1233&orig_http_referrer=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fandroid%2Fgetting-started%2F&orig_request_uri=https%3A%2F%2Fdevelopers.facebook.com%2Fajax%2Fdocs%2Fnav%2F%3Fpath1%3Dandroid%26path2%3Dgetting-started&region=apac&scrolled=true&session_id=15R4wvgEeeBHpiKu6&site=developers).
+
+2. On the [Apps page](https://developers.facebook.com/micro_site/url/?click_from_context_menu=true&country=IN&destination=https%3A%2F%2Fdevelopers.facebook.com%2Fapps&event_type=click&last_nav_impression_id=1ncuveZ8Jff9LpiJt&max_percent_page_viewed=53&max_viewport_height_px=639&max_viewport_width_px=1233&orig_http_referrer=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fandroid%2Fgetting-started%2F&orig_request_uri=https%3A%2F%2Fdevelopers.facebook.com%2Fajax%2Fdocs%2Fnav%2F%3Fpath1%3Dandroid%26path2%3Dgetting-started&region=apac&scrolled=true&session_id=15R4wvgEeeBHpiKu6&site=developers), select an app to open the dashboard for that app.
+
+3. On the Dashboard, navigate to Settings > Advanced > Security > Client token.
+
+##### Android Studio Setup
+1. Open the file Gradle Scripts | build.gradle (Project: <your_project>) and add the following:
+
+```java
+mavenCentral()
+```
+2. Save and close the build.gradle (Project: <your_project>) file.
+
+3. Open the file Gradle Scripts | build.gradle (Module: app) and add the following to the dependencies section:
+
+```java
+implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+```
+4. Save and close the build.gradle (Module: app) file.
+
+5. Open the /app/res/values/strings.xml file in your app project.
+
+6. Add string elements with the names facebook_app_id and facebook_client_token, and set the values to your App ID and Client Token. For example, if your app ID is 1234 and your client token is 56789 your code looks like the following:
+
+```xml
+<string name="facebook_app_id">1234</string>
+<string name="facebook_client_token">56789</string>
+
+```
+7. Open the /app/manifests/AndroidManifest.xml file in your app project.
+
+8. Add meta-data elements to the application element for your app ID and client token:
+
+```xml
+<application android:label="@string/app_name" ...>
+    ...
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+    ...
+</application
+```
+
+9. Add a uses-permission element to the manifest after the application element:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+10. Build your project.
 #### 3.2 iOS
 
 Follow ***steps 2, 3 and 4*** in the [Getting Started Guide](https://developers.facebook.com/docs/ios/use-cocoapods) for Facebook SDK for iOS. 
