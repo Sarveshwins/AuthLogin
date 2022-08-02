@@ -237,17 +237,17 @@ import { View} from 'react-native'
 import FaceBookLogIn from 'react-native-auth-login'
 
 const onResponse=(error,result)=>{
-    if (error) {
-       console.log("Error",error)
-    } else if (result.isCancelled) {
-       console.log("Login Cancelled.")
-    } else {
-       console.log("Result",result)
-    }
+  if (error) {
+     // Do something on error
+  } else if (result.isCancelled) {
+     // Do something if login is cancelled
+  } else {
+    // Do something with resulth returned on successful login
   }
+}
 
 const getAccessToken = (accessToken) => {
-    console.log("Access Token",accessToken)
+  // Do sommething with access token returned
 }
 const Demo = () => {
 

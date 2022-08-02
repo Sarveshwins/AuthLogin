@@ -4,16 +4,16 @@ import FaceBookLogIn from './FaceBook/index'
 
 const onResponse=(error,result)=>{
   if (error) {
-     console.log("Error",error)
+     // Do something on error
   } else if (result.isCancelled) {
-     console.log("Login Cancelled.")
+     // Do something if login is cancelled
   } else {
-     console.log("Result",result)
+    // Do something with resulth returned on successful login
   }
 }
 
 const getAccessToken = (accessToken) => {
-  console.log("Access Token",accessToken)
+  // Do sommething with access token returned
 }
 
 const App = () => {
