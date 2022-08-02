@@ -1,4 +1,7 @@
 /**
  * @format
  */
-export { default as FaceBookLogIn } from "./src/FaceBook"
+ 'use strict';
+
+import FaceBookLogIn from './src/FaceBook'
+export default FaceBookLogIn;
