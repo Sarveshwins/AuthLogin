@@ -68,13 +68,13 @@ Note : If popup comes for package name verification select “Use this package n
 using either Yarn:
 
 ```
-yarn add react-native-social-login
+yarn add react-native-auth-login
 ```
 
 or npm:
 
 ```
-npm install --save react-native-social-login
+npm install --save react-native-auth-login
 ```
 ### 2. Link
 
@@ -104,7 +104,7 @@ Follow ***steps 2, 3 and 4*** in the [Getting Started Guide](https://developers.
 
 import React from 'react'
 import { View} from 'react-native'
-import FaceBookLogIn from './FaceBook/index'
+import FaceBookLogIn from 'react-native-auth-login'
 
 const onResponse=(error,result)=>{
     if (error) {
