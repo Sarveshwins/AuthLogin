@@ -90,13 +90,7 @@ $ cd ios/ && pod install
 ```
 ### 3. Configure projects
 
-#### 3.1 Android
-
-Before you can run the project, follow the [Getting Started Guide](https://developers.facebook.com/docs/android/getting-started/) for Facebook Android SDK to set up a Facebook app. You can skip the build.gradle changes since that's taken care of by the rnpm link step above, but **make sure** you follow the rest of the steps such as updating `strings.xml` and `AndroidManifest.xml`.
-
-Follow following steps to setup android files to use facebook app id
-
-##### Get App id 
+#### Get App id 
 
 Each app that you create has a unique ID. To get the ID for an app, do the following:
 
@@ -106,7 +100,7 @@ Each app that you create has a unique ID. To get the ID for an app, do the follo
 
 3. Find your app and click the App ID. The app ID is copied to the clipboard.
 
-##### Get Your Client Token
+#### Get Your Client Token
 
 Each app that you create has a unique client token that you use to access Facebook. To get the Client Token for an app, do the following:
 
@@ -115,6 +109,12 @@ Each app that you create has a unique client token that you use to access Facebo
 2. On the [Apps page](https://developers.facebook.com/micro_site/url/?click_from_context_menu=true&country=IN&destination=https%3A%2F%2Fdevelopers.facebook.com%2Fapps&event_type=click&last_nav_impression_id=1ncuveZ8Jff9LpiJt&max_percent_page_viewed=53&max_viewport_height_px=639&max_viewport_width_px=1233&orig_http_referrer=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fandroid%2Fgetting-started%2F&orig_request_uri=https%3A%2F%2Fdevelopers.facebook.com%2Fajax%2Fdocs%2Fnav%2F%3Fpath1%3Dandroid%26path2%3Dgetting-started&region=apac&scrolled=true&session_id=15R4wvgEeeBHpiKu6&site=developers), select an app to open the dashboard for that app.
 
 3. On the Dashboard, navigate to Settings > Advanced > Security > Client token.
+
+#### 3.1 Android
+
+Before you can run the project, follow the [Getting Started Guide](https://developers.facebook.com/docs/android/getting-started/) for Facebook Android SDK to set up a Facebook app. You can skip the build.gradle changes since that's taken care of by the rnpm link step above, but **make sure** you follow the rest of the steps such as updating `strings.xml` and `AndroidManifest.xml`.
+
+Follow following steps to setup android files to use facebook app id
 
 ##### Android Studio Setup
 1. Open the file Gradle Scripts | build.gradle (Project: <your_project>) and add the following:
@@ -164,6 +164,70 @@ implementation 'com.facebook.android:facebook-android-sdk:latest.release'
 
 Follow ***steps 2, 3 and 4*** in the [Getting Started Guide](https://developers.facebook.com/docs/ios/use-cocoapods) for Facebook SDK for iOS. 
 
+
+Follow following steps to setup ios files to use facebook app id
+
+##### Configure Info.plist
+
+1. In Xcode, right-click your project’s Info.plist file and select Open As -> Source Code.
+2. Insert the following XML snippet into the body of your file just before the final </dict> element.
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>fb{your-app-id}</string>
+    </array>
+  </dict>
+</array>
+<key>FacebookAppID</key>
+<string>{your-app-id}</string>
+<key>FacebookDisplayName</key>
+<string>{your-app-name}</string>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>fbapi</string>
+  <string>fb-messenger-share-api</string>
+  <string>fbauth2</string>
+  <string>fbshareextension</string>
+</array>
+```
+
+Note : Replace {your-app-id}, and {your-app-name} with your app's App's ID and name found on the Facebook App Dashboard.
+
+#####  Connect App Delegate
+
+To post-process the results from actions that require you to switch to the native Facebook app or Safari, such as Facebook Login or Facebook Dialogs, you need to connect your AppDelegate class to the FBSDKApplicationDelegate object. To accomplish this, add the following code to your AppDelegate.m file
+
+```swift
+//  AppDelegate.m
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+- (BOOL)application:(UIApplication *)application 
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  
+  // You can skip this line if you have the latest version of the SDK installed
+  [[FBSDKApplicationDelegate sharedInstance] application:application
+    didFinishLaunchingWithOptions:launchOptions];
+  // Add any custom logic here.
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)application 
+            openURL:(NSURL *)url 
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+
+  BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+    openURL:url
+    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+    annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+  ];
+  // Add any custom logic here.
+  return handled;
+}
+```
 ## Usage
 
 ```js
