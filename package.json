@@ -1,6 +1,6 @@
 {
   "name": "react-native-auth-login",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Social Login Component for Facebook, Google, Firebase and Apple for react native",
   "main": "index.js",
   "scripts": {

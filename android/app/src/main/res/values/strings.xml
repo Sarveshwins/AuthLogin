@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">SocialLogin</string>
-    <string name="facebook_app_id">1545249995894157</string>
-    <string name="facebook_client_token">6be3f1aa1750e342d555a45b0135bec4</string>
+    <string name="facebook_app_id">{fb-app-id}</string>
+    <string name="facebook_client_token">{fb-client-token}</string>
 </resources>
