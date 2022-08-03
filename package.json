@@ -1,6 +1,6 @@
 {
   "name": "react-native-auth-login",
-  "version": "0.0.4",
+  "version": "1.0.1",
   "description": "A Social Login Component for Facebook, Google, Firebase and Apple for react native",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
   ],
   "homepage": "https://github.com/Sarveshwins/AuthLogin/blob/main/README.md",
   "dependencies": {
+    "@react-native-google-signin/google-signin": "^8.0.0",
     "react": "18.0.0",
     "react-native": "0.69.3",
     "react-native-fbsdk": "^3.0.0"
