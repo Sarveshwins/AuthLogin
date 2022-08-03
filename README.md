@@ -265,3 +265,24 @@ const Demo = () => {
 export default Demo
 
 ```
+
+# SignIn With Google
+
+## Create Google cloud account
+
+1. Open [Google Cloud console](https://console.cloud.google.com/?_ga=2.75089360.398160359.1659523950-1547434176.1659504564) in a browser.
+
+2. When prompted to sign in, create a new account by clicking Create account.
+
+3. Follow the instructions to register your corporate email address as a [Google account](https://support.google.com/accounts/answer/27441). Alternatively, you can use a Gmail account or other Google account.
+
+4. Continue to the [Google Cloud console](https://console.cloud.google.com/?_ga=2.96773469.398160359.1659523950-1547434176.1659504564) and accept the Google Cloud terms presented.
+
+## Generating the required Keys
+Go to https://console.cloud.google.com/ and create a New Project.
+```html
+<p align="center">
+  <img src="./assets/Google/CreateProject.png" width="350" title="hover text">
+</p>
+```
+![Screenshot]('./assets/Google/CreateProject.png')
