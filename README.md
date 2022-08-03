@@ -279,9 +279,166 @@ export default Demo
 4. Continue to the [Google Cloud console](https://console.cloud.google.com/?_ga=2.96773469.398160359.1659523950-1547434176.1659504564) and accept the Google Cloud terms presented.
 
 ## Generating the required Keys
-Go to https://console.cloud.google.com/ and create a New Project.
+1. Go to https://console.cloud.google.com/ and create a New Project.
 
 <p align="center">
   <img src="./assets/Google/CreateProject.png" width="450" title="hover text" height="80">
 </p>
+
+2. The navigate to APIs & Services → Credentials
+
+<p align="center">
+  <img src="./assets/Google/SelectCredentials.png" width="450" title="hover text" height="380">
+</p>
+
+### iOS App Setup
+
+
+1. Click on CREATE CREDENTIALS → OAuth client ID
+
+<p align="center">
+  <img src="./assets/Google/CreateCredentials.png" width="450" title="hover text" height="380">
+</p>
+
+2.  From the Application Type dropdown select iOS
+
+<p align="center">
+  <img src="./assets/Google/SelectiOS.png" width="450" title="hover text" height="380">
+</p>
+
+3. Give this key a Name (convention is to have a name without any caps the screenshot below is just shared as an example)and Bundle ID (same as in bundle id in General tab of Project target file of iOS project) and click CREATE.
+
+<p align="center">
+  <img src="./assets/Google/CreateiOSApp.png" width="450" title="hover text" height="380">
+</p>
+
+You’ll now see the key in your credentials under OAuth 2.0 Client IDs
+
+<p align="center">
+  <img src="./assets/Google/CredentialsList.png" width="450" title="hover text" height="80">
+</p>
+
+4. For iOS we also need to add a URL scheme. Click on the Name of the key you just created and you’ll. be taken to a page like this:
+
+<p align="center">
+  <img src="./assets/Google/urlScheme.png" width="450" title="hover text" height="400">
+</p>
+
+5. Here copy the iOS URL scheme given on the right side and open your React Native iOS project in XCode.
+
+Select your app from the TARGETS section, then select the Info tab, and expand the URL Types section. Click on. the + button and paste the copied iOS URL scheme here.
+
+<p align="center">
+  <img src="./assets/Google/pasteUrlScheme.png" width="450" title="hover text" height="400">
+</p>
+
+That’s it for iOS setup next we’ll create a key for android.
+
+### Android App Setup
+
+1. Click on CREATE CREDENTIALS → OAuth client ID and this time from Application type select Android.
+
+<p align="center">
+  <img src="./assets/Google/CreateAndroidApp.png" width="450" title="hover text" height="400">
+</p>
+
+2. Same as before giving it a name and copy the exact Package name as per your AndroidManifest.xml file.
+
+A new thing here is it’s asking for an SHA-1 certificate fingerprint.
+
+To create an SHA-1 fingerprint Open your React-Native Project and from its terminal first, do cd android and then run this command:
+
+```
+keytool -keystore app/debug.keystore -list -v
+```
+
+Enter the keystore password when asked and you will see something like this
+
+<p align="center">
+  <img src="./assets/Google/shaKey.png" width="450" title="hover text" height="400">
+</p>
+
+3. Copy the SHA1 (hidden with green) and paste the SHA-1 key in the Google Cloud Console ad click on CREATE.
+<p align="center">
+  <img src="./assets/Google/CreateAndroidProject.png" width="450" title="hover text" height="400">
+</p>
+
+Now you have two client IDs one for iOS and one for Android.
+
+## Installation
+### 1. Install the library
+
+using either Yarn:
+
+```
+yarn add react-native-auth-login
+```
+
+or npm:
+
+```
+npm install --save react-native-auth-login
+```
+### 2. Link
+
+- **React Native 0.60+**
+
+
+[CLI autolink feature](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) links the module while building the app.
+
+*Note* For `iOS` using `cocoapods`, run:
+
+```bash
+$ cd ios/ && pod install
+```
+
+Use the package in file like this
+
+```js
+import React from 'react'
+import { View } from 'react-native'
+import GoogleSignIn from 'react-native-auth-login'
+
+const onResponse = (error, result) => {
+  if (error) {
+    // Do something on error
+  } else if (result.isCancelled) {
+    // Do something if login is cancelled
+  } else {
+    // Do something with resulth returned on successful login
+  }
+}
+
+const getAccessToken = (accessToken) => {
+  // Do sommething with access token returned
+}
+
+const Demo = () => {
+
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <GoogleSignIn 
+      buttonTitle={"SignIn with Google"} 
+      buttonStyle={{
+        height: 40,
+        width: 220,
+        backgroundColor: "white",
+        borderWidth: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 5,
+        borderColor: "#1b69de"
+      }} 
+      onResponse={(error, result)=>onResponse(error, result)}
+      getAccessToken={(accessToken)=>getAccessToken(accessToken)}
+      androidClientId={'YOUR_ANDROID_CLIENT_ID'}
+      iosClientId={'YOUR_IOS_CLIENT_ID'}
+      />
+    </View>
+  )
+}
+
+export default Demo
+
+```
 
