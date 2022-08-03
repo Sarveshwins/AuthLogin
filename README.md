@@ -280,9 +280,8 @@ export default Demo
 
 ## Generating the required Keys
 Go to https://console.cloud.google.com/ and create a New Project.
-```html
+
 <p align="center">
   <img src="./assets/Google/CreateProject.png" width="350" title="hover text">
 </p>
-```
-![Screenshot]('./assets/Google/CreateProject.png')
+
