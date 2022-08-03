@@ -441,4 +441,8 @@ const Demo = () => {
 export default Demo
 
 ```
+#### Require Props
 
+onResponse, getAccessToken ,androidClientId and iosClientId are required.
+
+onResponse and getAcessToken are functions and androidClientId and iosClientId are both string types.
