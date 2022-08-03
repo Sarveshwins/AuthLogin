@@ -282,6 +282,6 @@ export default Demo
 Go to https://console.cloud.google.com/ and create a New Project.
 
 <p align="center">
-  <img src="./assets/Google/CreateProject.png" width="350" title="hover text">
+  <img src="./assets/Google/CreateProject.png" width="450" title="hover text" height="80">
 </p>
 
