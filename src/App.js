@@ -8,7 +8,7 @@ const onResponse = (error, result) => {
   } else if (result.isCancelled) {
     // Do something if login is cancelled
   } else {
-    // Do something with resulth returned on successful login
+    // Do something with result returned on successful login
   }
 }
 
