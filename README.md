@@ -297,7 +297,7 @@ export default Demo
 1. Click on CREATE CREDENTIALS → OAuth client ID
 
 <p align="center">
-  <img src="./assets/Google/CreateCredentials.png" width="450" title="hover text" height="380">
+  <img src="./assets/Google/CreateCredentials.png" width="450" title="hover text" height="280">
 </p>
 
 2.  From the Application Type dropdown select iOS
