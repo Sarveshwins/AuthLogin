@@ -282,7 +282,7 @@ export default Demo
 1. Go to https://console.cloud.google.com/ and create a New Project.
 
 <p align="center">
-  <img src="./assets/Google/CreateProject.png" width="520" title="hover text" height="80">
+  <img src="./assets/Google/CreateProject.png" width="550" title="hover text" height="60">
 </p>
 
 2. The navigate to APIs & Services → Credentials
@@ -297,7 +297,7 @@ export default Demo
 1. Click on CREATE CREDENTIALS → OAuth client ID
 
 <p align="center">
-  <img src="./assets/Google/CreateCredentials.png" width="650" title="hover text" height="230">
+  <img src="./assets/Google/CreateCredentials.png" width="650" title="hover text" height="180">
 </p>
 
 2.  From the Application Type dropdown select iOS
@@ -315,13 +315,13 @@ export default Demo
 You’ll now see the key in your credentials under OAuth 2.0 Client IDs
 
 <p align="center">
-  <img src="./assets/Google/CredentialsList.png" width="650" title="hover text" height="130">
+  <img src="./assets/Google/CredentialsList.png" width="550" title="hover text" height="100">
 </p>
 
 4. For iOS we also need to add a URL scheme. Click on the Name of the key you just created and you’ll. be taken to a page like this:
 
 <p align="center">
-  <img src="./assets/Google/urlScheme.png" width="550" title="hover text" height="400">
+  <img src="./assets/Google/urlScheme.png" width="600" title="hover text" height="350">
 </p>
 
 5. Here copy the iOS URL scheme given on the right side and open your React Native iOS project in XCode.
