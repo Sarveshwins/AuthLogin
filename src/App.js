@@ -5,9 +5,7 @@ import GoogleSignIn from './Google'
 const onResponse = (error, result) => {
   if (error) {
     // Do something on error
-  } else if (result.isCancelled) {
-    // Do something if login is cancelled
-  } else {
+  }  else {
     // Do something with result returned on successful login
   }
 }
@@ -34,7 +32,8 @@ const App = () => {
       onResponse={(error, result)=>onResponse(error, result)}
       getAccessToken={(accessToken)=>getAccessToken(accessToken)}
       androidClientId={'YOUR_ANDROID_CLIENT_ID'}
-      iosClientId={'YOUR_IOS_CLIENT_ID'}
+      webClientId={'777892754604-a526m4088eg9t0m3uslq7b0ea0e0rjo9.apps.googleusercontent.com'}
+      iosClientId={ '777892754604-93h0323gd6ktbbhpo2m3na0no2fqjej1.apps.googleusercontent.com'}
       />
     </View>
   )
