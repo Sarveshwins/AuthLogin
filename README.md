@@ -297,7 +297,7 @@ export default Demo
 1. Click on CREATE CREDENTIALS → OAuth client ID
 
 <p align="center">
-  <img src="./assets/Google/CreateCredentials.png" width="450" title="hover text" height="280">
+  <img src="./assets/Google/CreateCredentials.png" width="650" title="hover text" height="280">
 </p>
 
 2.  From the Application Type dropdown select iOS
@@ -309,19 +309,19 @@ export default Demo
 3. Give this key a Name (convention is to have a name without any caps the screenshot below is just shared as an example)and Bundle ID (same as in bundle id in General tab of Project target file of iOS project) and click CREATE.
 
 <p align="center">
-  <img src="./assets/Google/CreateiOSApp.png" width="450" title="hover text" height="380">
+  <img src="./assets/Google/CreateiOSApp.png" width="550" title="hover text" height="380">
 </p>
 
 You’ll now see the key in your credentials under OAuth 2.0 Client IDs
 
 <p align="center">
-  <img src="./assets/Google/CredentialsList.png" width="450" title="hover text" height="80">
+  <img src="./assets/Google/CredentialsList.png" width="650" title="hover text" height="130">
 </p>
 
 4. For iOS we also need to add a URL scheme. Click on the Name of the key you just created and you’ll. be taken to a page like this:
 
 <p align="center">
-  <img src="./assets/Google/urlScheme.png" width="450" title="hover text" height="400">
+  <img src="./assets/Google/urlScheme.png" width="550" title="hover text" height="400">
 </p>
 
 5. Here copy the iOS URL scheme given on the right side and open your React Native iOS project in XCode.
