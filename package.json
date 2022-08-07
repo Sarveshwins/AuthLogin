@@ -4,6 +4,15 @@
   "description": "A Social Login Component for Facebook, Google, Firebase and Apple for react native",
   "main": "index.js",
   "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "cache": "npm start -- --reset-cache",
+    "ios-device": "react-native run-ios --device",
+    "ios:staging": "gulp set --env=staging && react-native run-ios",
+    "ios:development": "gulp set --env=development && react-native run-ios",
+    "android:staging": "gulp set --env=staging && react-native run-android",
+    "android:development": "gulp set --env=development && react-native run-android",
     "test": "jest",
     "lint": "eslint ."
   },

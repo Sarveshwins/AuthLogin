@@ -3,16 +3,18 @@ import { View, Text, Button, TouchableHighlightComponent, TouchableOpacity } fro
 import {
     GoogleSignin,
 } from '@react-native-google-signin/google-signin';
-const GoogleSignIn = ({ webClientId,buttonStyle="SignIn With Google", buttonTitle,onResponse,getAccessToken,androidClientId,iosClientId}) => {
+const GoogleSignIn = ({ webClientId, buttonStyle = "SignIn With Google", buttonTitle, onResponse, getAccessToken, androidClientId, iosClientId }) => {
     return (
         <View>
             <TouchableOpacity
                 onPress={() => {
                     GoogleSignin.configure({
-                        androidClientId: androidClientId,
-                        iosClientId: iosClientId,   
+                        // androidClientId: androidClientId,
+                        iosClientId: iosClientId,
+                        // offlineAccess: true,
                         offlineAccess: true,
-                        webClientId: webClientId, 
+                        webClientId: webClientId,
+                        androidClientId: androidClientId,
                     });
                     GoogleSignin.hasPlayServices().then((hasPlayService) => {
                         if (hasPlayService) {

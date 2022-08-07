@@ -219,10 +219,10 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
+            storeFile file('newDebug.keystore')
+            storePassword '123456789'
+            keyAlias 'newDebug'
+            keyPassword '123456789'
         }
     }
     buildTypes {
@@ -256,6 +256,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
     //noinspection GradleDynamicVersion
@@ -318,3 +319,4 @@ def isNewArchitectureEnabled() {
     // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
+//apply plugin: 'com.google.gms.google-services'
