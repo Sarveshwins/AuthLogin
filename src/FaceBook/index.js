@@ -24,7 +24,8 @@ const FaceBookLogIn = ({onResponse,getAccessToken}) => {
             }
           }
         }
-        onLogoutFinished={() => console.log("logout.")} />
+        onLogoutFinished={() => console.log("logout.")} 
+        />
     </View>
   )
 }

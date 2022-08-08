@@ -433,6 +433,7 @@ const Demo = () => {
       getAccessToken={(accessToken)=>getAccessToken(accessToken)}
       androidClientId={'YOUR_ANDROID_CLIENT_ID'}
       iosClientId={'YOUR_IOS_CLIENT_ID'}
+      buttonComponent={signInButton}
       />
     </View>
   )
@@ -446,3 +447,29 @@ export default Demo
 onResponse, getAccessToken ,androidClientId and iosClientId are required.
 
 onResponse and getAcessToken are functions and androidClientId and iosClientId are both string types.
+
+###### buttonComponent
+
+You can pass any button style which you want to use as a button 
+
+```js
+const signInButton=()=>{
+  return(
+    <View  style={ {
+      height: 40,
+      width: 200,
+      backgroundColor: "white",
+      borderWidth: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: 5,
+      borderColor: "#1b69de"
+  }}>
+<Text style={{ fontWeight: "bold", color: "#1b69de" }}>
+      { "Sign In With Google"}
+  </Text>
+  </View>
+  )
+}
+
+```

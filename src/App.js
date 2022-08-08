@@ -1,11 +1,25 @@
 import React from 'react'
-import { View } from 'react-native'
-import AppleLogIn from './Apple'
+import { View,Text } from 'react-native'
 import GoogleSignIn from './Google'
-
+const signInButton=()=>{
+  return(
+    <View  style={ {
+      height: 40,
+      width: 200,
+      backgroundColor: "white",
+      borderWidth: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: 5,
+      borderColor: "#1b69de"
+  }}>
+<Text style={{ fontWeight: "bold", color: "#1b69de" }}>
+      { "Sign In With Google"}
+  </Text>
+  </View>
+  )
+}
 const onResponse = (error, result) => {
-  console.log("result==-",result);
-  console.log("error==-",error);
   if (error) {
     // Do something on error
   }  else {
@@ -39,8 +53,8 @@ const App = () => {
       androidClientId={'YOUR_ANDROID_CLIENT_ID'}
       webClientId={"YOUR_WEB_CLIENT_ID"}
       iosClientId={ 'YOUR_iOS_CLIENT_ID'}
+      buttonComponent={signInButton}
       />
-      {/* <AppleLogIn/> */}
     </View>
   )
 }
