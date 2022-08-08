@@ -13,8 +13,8 @@ import {
 const GoogleSignIn = ({
   buttonComponent,
   webClientId,
-  buttonStyle = "SignIn With Google",
-  buttonTitle,
+  buttonStyle ,
+  buttonTitle = "SignIn With Google",
   onResponse,
   getAccessToken,
   androidClientId,
