@@ -1,26 +1,25 @@
 import React from 'react'
 import { View, Text,StyleSheet ,TouchableOpacity} from 'react-native'
-import appleAuth, {
-    AppleButton,
-    AppleAuthError,
-    AppleAuthRequestScope,
-    AppleAuthRequestOperation,
-  } from '@invertase/react-native-apple-authentication'
+import appleAuth from '@invertase/react-native-apple-authentication'
 
 const AppleLogIn = ({
   buttonComponent,
   buttonStyle ,
   buttonTitle = "SignIn With Apple",
   onResponse,
-  getAccessToken,}) => {
+  getAccessToken
+}) => {
 
-
-    const onAppleButtonPress=async()=>{
-      const appleAuthRequestResponse = await appleAuth.performRequest({
+    const onAppleButtonPress=()=>{
+    appleAuth.performRequest({
         requestedOperation: appleAuth.Operation.LOGIN,
         requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
-      });
-      console.log("Resp>>>",appleAuthRequestResponse)
+      }).then((res)=>{
+        onResponse(null,res)
+        getAccessToken(res?.identityToken)
+      }).catch((error)=>{
+        onResponse(e,null)
+    })
     }
 
     return (
