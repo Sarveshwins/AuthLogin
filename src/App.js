@@ -1,5 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
+import AppleLogIn from './Apple'
 import GoogleSignIn from './Google'
 
 const onResponse = (error, result) => {
@@ -21,7 +22,9 @@ const App = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <GoogleSignIn buttonTitle={"SignIn with Google"} buttonStyle={{
+      <GoogleSignIn 
+      buttonTitle={"SignIn with Google"} 
+      buttonStyle={{
         height: 40,
         width: 220,
         backgroundColor: "white",
@@ -34,9 +37,10 @@ const App = () => {
       onResponse={(error, result)=>onResponse(error, result)}
       getAccessToken={(accessToken)=>getAccessToken(accessToken)}
       androidClientId={'YOUR_ANDROID_CLIENT_ID'}
-      webClientId={"777892754604-94s85r0u25dacrp3kkha1v8j1jihrita.apps.googleusercontent.com"}
-      iosClientId={ '777892754604-93h0323gd6ktbbhpo2m3na0no2fqjej1.apps.googleusercontent.com'}
+      webClientId={"YOUR_WEB_CLIENT_ID"}
+      iosClientId={ 'YOUR_iOS_CLIENT_ID'}
       />
+      {/* <AppleLogIn/> */}
     </View>
   )
 }

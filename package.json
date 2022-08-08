@@ -9,10 +9,6 @@
     "start": "react-native start",
     "cache": "npm start -- --reset-cache",
     "ios-device": "react-native run-ios --device",
-    "ios:staging": "gulp set --env=staging && react-native run-ios",
-    "ios:development": "gulp set --env=development && react-native run-ios",
-    "android:staging": "gulp set --env=staging && react-native run-android",
-    "android:development": "gulp set --env=development && react-native run-android",
     "test": "jest",
     "lint": "eslint ."
   },
@@ -28,9 +24,11 @@
   ],
   "homepage": "https://github.com/Sarveshwins/AuthLogin/blob/main/README.md",
   "dependencies": {
+    "@invertase/react-native-apple-authentication": "^2.2.2",
     "@react-native-google-signin/google-signin": "^8.0.0",
     "react": "18.0.0",
     "react-native": "0.69.3",
+    "react-native-apple-authentication": "^2.0.0",
     "react-native-fbsdk": "^3.0.0"
   },
   "devDependencies": {
