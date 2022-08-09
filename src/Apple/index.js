@@ -1,7 +1,7 @@
 import React from 'react'
-import { View, Text,StyleSheet ,TouchableOpacity} from 'react-native'
-import appleAuth from '@invertase/react-native-apple-authentication'
-
+import { View, Text,StyleSheet ,TouchableOpacity, Platform} from 'react-native'
+import appleAuth,{ appleAuthAndroid } from '@invertase/react-native-apple-authentication'
+import { v4 as uuid } from 'uuid'
 const AppleLogIn = ({
   buttonComponent,
   buttonStyle ,
@@ -10,7 +10,7 @@ const AppleLogIn = ({
   getAccessToken
 }) => {
 
-    const onAppleButtonPress=()=>{
+    const onIOSAppleButtonPress=()=>{
     appleAuth.performRequest({
         requestedOperation: appleAuth.Operation.LOGIN,
         requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
@@ -21,12 +21,28 @@ const AppleLogIn = ({
         onResponse(e,null)
     })
     }
-
+    const onAndroidAppleButtonPress=()=>{
+      const rawNonce = uuid();
+      const state = uuid();
+      appleAuthAndroid.configure({
+        clientId: 'com.signInApple.socialLogin',
+        redirectUri: 'https://test.example.com',
+        responseType: appleAuthAndroid.ResponseType.ALL,
+        scope: appleAuthAndroid.Scope.ALL,
+        nonce: rawNonce,
+        state,
+      });
+      appleAuthAndroid.signIn().then((res)=>{
+        console.log("Res",res)
+      }).catch((err)=>{
+        console.log("Error",err)
+      })
+    }
     return (
         <View>
         <TouchableOpacity
         onPress={() => {
-          onAppleButtonPress()
+         Platform.OS==='ios'? onIOSAppleButtonPress() :onAndroidAppleButtonPress()
         }}
       >
         {buttonComponent ? (

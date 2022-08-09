@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/appledev/.nvm/versions/node/v14.18.1/bin/node /Users/appledev/.nvm/versions/node/v14.18.1/bin/yarn add react-native-social-login
+  /Users/appledev/.nvm/versions/node/v14.18.1/bin/node /Users/appledev/.nvm/versions/node/v14.18.1/bin/yarn add uuid
 
 PATH: 
   /Users/appledev/.nvm/versions/node/v14.18.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/appledev/.nvm/versions/node/v14.18.1/bin
@@ -14,21 +14,21 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-native-social-login/-/react-native-social-login-1.0.0.tgz: ETIMEDOUT
-      at Timeout._onTimeout (/Users/appledev/.nvm/versions/node/v14.18.1/lib/node_modules/yarn/lib/cli.js:141543:19)
-      at listOnTimeout (internal/timers.js:557:17)
-      at processTimers (internal/timers.js:500:7)
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26)
 
 npm manifest: 
   {
     "name": "react-native-auth-login",
-    "version": "0.0.1",
+    "version": "1.0.2",
     "description": "A Social Login Component for Facebook, Google, Firebase and Apple for react native",
     "main": "index.js",
     "scripts": {
       "android": "react-native run-android",
       "ios": "react-native run-ios",
       "start": "react-native start",
+      "cache": "npm start -- --reset-cache",
+      "ios-device": "react-native run-ios --device",
       "test": "jest",
       "lint": "eslint ."
     },
@@ -44,9 +44,13 @@ npm manifest:
     ],
     "homepage": "https://github.com/Sarveshwins/AuthLogin/blob/main/README.md",
     "dependencies": {
+      "@invertase/react-native-apple-authentication": "^2.2.2",
+      "@react-native-google-signin/google-signin": "^8.0.0",
       "react": "18.0.0",
       "react-native": "0.69.3",
-      "react-native-fbsdk": "^3.0.0"
+      "react-native-apple-authentication": "^2.0.0",
+      "react-native-fbsdk": "^3.0.0",
+      "uuid": "^8.3.2"
     },
     "devDependencies": {
       "@babel/core": "^7.12.9",
@@ -882,6 +886,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
     integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
   
+  "@invertase/react-native-apple-authentication@^2.2.2":
+    version "2.2.2"
+    resolved "https://registry.yarnpkg.com/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-2.2.2.tgz#1d3b6d22ba1fab8ef8a285396acdbf0778ab071b"
+    integrity sha512-uNZcUn9WbAQP5zSOFXI1+kEUokLwZG9imUulFdt5t22CU2ozGq6zyPm+BAVVg8D5eUUXduX/dJFhbuOpJxiEhQ==
+  
   "@istanbuljs/load-nyc-config@^1.0.0":
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -1320,6 +1329,11 @@ Lockfile:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.2.0.tgz#7d6d789ae8edf73dc9bed1246cd48277edea8066"
     integrity sha512-o6aam+0Ug1xGK3ABYmBm0B1YuEKfM/5kaoZO0eHbZwSpw9UzDX4G5y4Nx/K20FHqUmJHkZmLvOUFYwN4N+HqKA==
+  
+  "@react-native-google-signin/google-signin@^8.0.0":
+    version "8.0.0"
+    resolved "https://registry.yarnpkg.com/@react-native-google-signin/google-signin/-/google-signin-8.0.0.tgz#f8202c121b4df185eb165dc58b35544c643af25f"
+    integrity sha512-GV0EGXUfiqk9Kav74zOq4ww0rAhMUlwmIGEf94X2ptnxfKu9TufeTig1zuDQGasgFlziWju/Ya2WeC+7TYSbxw==
   
   "@react-native/assets@1.0.0":
     version "1.0.0"
@@ -5511,6 +5525,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
     integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
   
+  react-native-apple-authentication@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/react-native-apple-authentication/-/react-native-apple-authentication-2.0.0.tgz#519a769fc1cb8ebc0093a5881d7f0ffec02275ca"
+    integrity sha512-7SZJ5Gl+9C0Dztu/hFag2j2ET2yhI9wf6Q0liiEwFWPbrP7Jd5/XfMNxDGJerrV/yv949h3bxiVTl4Ce0Xb8lg==
+  
   react-native-codegen@^0.69.1:
     version "0.69.1"
     resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.69.1.tgz#3632be2f24464e6fad8dd11a25d1b6f3bc2c7d0b"
@@ -6638,7 +6657,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
     integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
   
-  uuid@^8.3.0:
+  uuid@^8.3.0, uuid@^8.3.2:
     version "8.3.2"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
     integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
