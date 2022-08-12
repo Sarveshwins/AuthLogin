@@ -18,7 +18,7 @@ const AppleLogIn = ({
         onResponse(null,res)
         getAccessToken(res?.identityToken)
       }).catch((error)=>{
-        onResponse(e,null)
+        onResponse(error,null)
     })
     }
     const onAndroidAppleButtonPress=()=>{
