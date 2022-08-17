@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "777892754604",
+    "project_id": "brave-pipe-320306",
+    "storage_bucket": "brave-pipe-320306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777892754604:android:49f587c42a5cd94422db09",
+        "android_client_info": {
+          "package_name": "com.sociallogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777892754604-giritr13ekpspkaghgbt8v97i3e1j6tm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sociallogin",
+            "certificate_hash": "abb9e247c9d03ccf6f63159793efa770c1848cfe"
+          }
+        },
+        {
+          "client_id": "777892754604-2a5dhtqt37kl3ajs0ig4f539ie7lhe0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD4CHbs5AtSWK7fbYJMLJvmz2msF2Yifs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777892754604-2a5dhtqt37kl3ajs0ig4f539ie7lhe0m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777892754604-2nj8chq7cg0sshvghecusbf24gl6l6j7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.signIn.socialLogIn"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

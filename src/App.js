@@ -1,6 +1,7 @@
 import React from 'react'
 import { View,Text } from 'react-native'
 import AppleLogIn from './Apple'
+import FirebaseLogIn from './Firebase'
 import GoogleSignIn from './Google'
 const signInButton=()=>{
   return(
@@ -37,7 +38,12 @@ const App = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-    <AppleLogIn
+    {/* <AppleLogIn
+      buttonComponent={signInButton}
+      onResponse={(error, result)=>onResponse(error, result)}
+      getAccessToken={(accessToken)=>getAccessToken(accessToken)}
+    /> */}
+     <FirebaseLogIn
       buttonComponent={signInButton}
       onResponse={(error, result)=>onResponse(error, result)}
       getAccessToken={(accessToken)=>getAccessToken(accessToken)}
