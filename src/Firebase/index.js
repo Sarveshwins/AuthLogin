@@ -42,22 +42,22 @@ const __doSignOut = async () => {
 const FirebaseLogIn = () => {
     return (
         <View>
-            <TouchableOpacity onPress={() => { __doCreateUser("navi@test.com", "passwordd") }}>
+            <TouchableOpacity onPress={() => { __doCreateUser("santoshi@test.com", "password") }}>
                 <Text>
                     Signup
                 </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => { __doSingIn("navi@test.com", "passwordd") }}>
+            <TouchableOpacity onPress={() => { __doSingIn("santoshi@test.com", "password") }}>
                 <Text>
                     Login
                 </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => { __doCheckSignIn("navi@test.com", "passwordd") }}>
+            <TouchableOpacity onPress={() => { __doCheckSignIn("santoshi@test.com", "password") }}>
                 <Text>
                     Check if user already signin
                 </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => { __doSignOut("navi@test.com", "passwordd") }}>
+            <TouchableOpacity onPress={() => { __doSignOut("santoshi@test.com", "password") }}>
                 <Text>
                     Logout
                 </Text>
