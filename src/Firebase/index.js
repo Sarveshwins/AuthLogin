@@ -6,10 +6,12 @@ const __doCreateUser = async (email, password) => {
         let response = await auth().createUserWithEmailAndPassword(email, password);
         if (response) {
             console.log("?", response)
+            alert("SignIn Succesful")
         }
     } catch (e) {
         console.log("eee", e)
         console.error(e.message);
+        alert(e.message)
     }
 }
 const __doSingIn = async (email, password) => {
@@ -17,9 +19,11 @@ const __doSingIn = async (email, password) => {
         let response = await auth().signInWithEmailAndPassword(email, password)
         if (response && response.user) {
             console.log("response==-", response);
+            alert("SignUp Succesful")
         }
     } catch (e) {
         console.log("e==-", e);
+        alert(e.message)
     }
 }
 const __doCheckSignIn = () => {
@@ -39,29 +43,38 @@ const __doSignOut = async () => {
     }
 
 }
-const FirebaseLogIn = () => {
+
+const FirebaseLogIn = ({buttonComponent,buttonText,actionType,email,password}) => {
     return (
         <View>
-            <TouchableOpacity onPress={() => { __doCreateUser("santoshi@test.com", "password") }}>
-                <Text>
-                    Signup
-                </Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => { __doSingIn("santoshi@test.com", "password") }}>
-                <Text>
-                    Login
-                </Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => { __doCheckSignIn("santoshi@test.com", "password") }}>
-                <Text>
-                    Check if user already signin
-                </Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => { __doSignOut("santoshi@test.com", "password") }}>
-                <Text>
-                    Logout
-                </Text>
-            </TouchableOpacity>
+             <TouchableOpacity
+        onPress={() => {
+            actionType=="SignUp"?__doCreateUser(email,password):__doSingIn(email,password)
+        }}
+      >
+        {buttonComponent ? (
+          buttonComponent()
+        ) : (
+          <View
+            style={
+              buttonStyle || {
+                height: 40,
+                width: 200,
+                backgroundColor: "white",
+                borderWidth: 1,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 5,
+                borderColor: "#1b69de",
+              }
+            }
+          >
+            <Text style={{ fontWeight: "bold", color: "#1b69de" }}>
+              {buttonText }
+            </Text>
+          </View>
+        )}
+      </TouchableOpacity>
         </View>
     )
 }

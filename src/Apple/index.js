@@ -73,17 +73,3 @@ const AppleLogIn = ({
 }
 
 export default AppleLogIn
-const styles=StyleSheet.create({
-    appleButton: {
-        width: '100%',
-        height: 45,
-        shadowColor: '#555',
-        shadowOpacity: 0.5,
-        shadowOffset: {
-          width: 0,
-          height: 3
-        },
-        marginVertical: 15,
-        backgroundColor:'red'
-      }
-})
